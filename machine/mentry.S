@@ -274,7 +274,8 @@ do_reset:
   la t1, _bss_end
 .Lbss_clear_init:
   beq t0, t1, .Lbss_clear_end
-  sd zero, 0(t0)
+  #sd zero, 0(t0)
+  sw zero, 0(t0)
   addi t0, t0, 8
   j .Lbss_clear_init
 
